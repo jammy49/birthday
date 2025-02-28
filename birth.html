@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #d6a2e8, #e0b3ff);
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 50px;
+            margin: 0;
+        }
+        .message {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+ .balloons {
+            position: absolute;
+            bottom: 0;
+            display: flex;
+            gap: 20px;
+        }
+        .balloon {
+            width: 50px;
+            height: 70px;
+            border-radius: 50%;
+            animation: float 4s infinite ease-in-out;
+        }
+        @keyframes float {
+            0% { transform: translateY(0); opacity: 1; }
+            50% { transform: translateY(-200px); opacity: 0.8; }
+            100% { transform: translateY(-400px); opacity: 0; }
+        }
+        .floating-emote {
+            width: 60px;
+            height: auto;
+        }
+        .birthday-image {
+            width: 200px;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+        .corner-image {
+            position: absolute;
+            width: 100px;
+            height: auto;
+        }
+        .top-left {
+            top: 10px;
+            left: 10px;
+        }
+        .top-right {
+            top: 10px;
+            right: 10px;
+        }
+        .bottom-left {
+            bottom: 10px;
+            left: 10px;
+        }
+        .bottom-right {
+            bottom: 10px;
+            right: 10px;
+        }
+        .spotify-container {
+            position: absolute;
+            top: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .floating-emote {
+            width: 50px;
+            height: auto;
+        }
+        .gift-box {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(to bottom, #0000ff, #ff0000);
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            margin-top: 20px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .gift-left {
+            left: 10%;
+        }
+        .gift-right {
+            right: 10%;
+        }
+        .gift-box::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 30px;
+            background: #ff0000;
+            border-radius: 5px;
+        }
+        .message-scroll {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50%;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            font-size: 30px;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 1000;
+        }
+        .close-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 5px;
+      
+
+        }
+    </style>
+    <script>
+        function showScrollMessage(messageId) {
+            document.getElementById(messageId).style.display = "block";
+        }
+        function closeScrollMessage(messageId) {
+            document.getElementById(messageId).style.display = "none";
+        }
+    </script>
+</head>
+<body>
+    <div class="spotify-container">
+        <img src="https://cdn.7tv.app/emote/01FGWGMDGR00081K7TFDP6E5C1/4x.webp" alt="Left Emote" class="floating-emote">
+        <iframe class="spotify-player" src="https://open.spotify.com/embed/track/3i5JQPoI7UPKIUueRSyt48?si=d180cb3f34a54615" width="300" height="80" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <img src="https://cdn.7tv.app/emote/01FGWGMDGR00081K7TFDP6E5C1/4x.webp" alt="Right Emote" class="floating-emote">
+    </div>
+    
+    <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/7a56f267-4c52-4771-9f01-4f7c45fd6b99-profile_image-70x70.png" alt="Birthday Image" class="birthday-image">
+    <img src="https://static-cdn.jtvnw.net/emoticons/v2/emotesv2_bcb94e98a1ac48108a0098f4e21b634a/default/dark/3.0" alt="Top Left Image" class="corner-image top-left">
+    <img src="https://static-cdn.jtvnw.net/emoticons/v2/emotesv2_bcb94e98a1ac48108a0098f4e21b634a/default/dark/3.0" alt="Bottom Right Image" class="corner-image bottom-right">
+    <img src="https://cdn.betterttv.net/emote/63148fc48d5463737706c44c/3x" alt="Top Right Image" class="corner-image top-right">
+    <img src="https://cdn.betterttv.net/emote/63148fc48d5463737706c44c/3x" alt="Bottom Left Image" class="corner-image bottom-left">
+    
+    <h1>🎉 Happy Birthday! 🎂</h1>
+    <p class="message">Hope you have an amazing day 💙</p>
+    
+    <div class="gift-box gift-left" onclick="showScrollMessage('scrollMessage1')">🎁</div>
+    <div class="gift-box gift-right" onclick="showScrollMessage('scrollMessage2')">🎁</div>
+    
+    <div id="scrollMessage1" class="message-scroll">
+        Hi loser, happy birthday<3 Even though you didn't wish me on my birthday here I am 🙄 Congrats on being 19 and moving one step closer to being old 💙 Here's a fun animal fact btw - A butterfly actually has its taste receptors on its feet, so it can taste any surface its on 😮
+        <button class="close-button" onclick="closeScrollMessage('scrollMessage1')">Close</button>
+    </div>
+    
+    <div id="scrollMessage2" class="message-scroll">
+        Hiii, this might be more of a cringe message. But hope you have a good and lovely year ahead of you. Proud of you for getting past your ed and so much more stuff 💙 Here's a fun animal fact btw - A blue whale's tongue actually weights as much as an whole elephant😮
+        <button class="close-button" onclick="closeScrollMessage('scrollMessage2')">Close</button> </div>
+<div class="balloons">
+        <div class="balloon" style="background-color: pink; animation-delay: 0s;"></div>
+        <div class="balloon" style="background-color: lightblue; animation-delay: 1s;"></div>
+        <div class="balloon" style="background-color: lightyellow; animation-delay: 2s;"></div>
+    </div>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
